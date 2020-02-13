@@ -15,6 +15,12 @@ import java.nio.channels.FileChannel;
  */
 @Slf4j
 public class FileChannelWriteDemo {
+    /**
+     * 演示FileChanel的使用方法
+     *
+     * @param args
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         String fileReadPath = "F:\\workspace-selfService-20200109\\netty_demo_all\\nio_demo_01\\src\\main\\resources\\read.txt";
         String fileWritePath = "F:\\workspace-selfService-20200109\\netty_demo_all\\nio_demo_01\\src\\main\\resources\\write.txt";
