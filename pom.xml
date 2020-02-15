@@ -7,6 +7,7 @@
     <modules>
         <module>bio_demo_01</module>
         <module>nio_demo_01</module>
+        <module>netty_demo_01</module>
     </modules>
     <groupId>com.ky2009666.apps.netty</groupId>
     <artifactId>netty_demo_all</artifactId>
@@ -35,6 +36,12 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-simple</artifactId>
                 <version>1.7.29</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>4.1.45.Final</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
