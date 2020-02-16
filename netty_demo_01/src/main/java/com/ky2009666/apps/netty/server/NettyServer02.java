@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
  * @author Lenovo
  */
 @Slf4j
-public class NettyServer01 {
+public class NettyServer02 {
     public static void main(String[] args) throws InterruptedException {
         /**
          * 创建两个线程组
@@ -50,7 +50,7 @@ public class NettyServer01 {
                                 @Override
                                 protected void initChannel(SocketChannel socketChannel) throws Exception {
                                     //在管道的后面增加处理
-                                    socketChannel.pipeline().addLast(new NettyServer01Handler());
+                                    socketChannel.pipeline().addLast(new NettyServer02Handler());
                                 }
                             }
                     );
