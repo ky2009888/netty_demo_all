@@ -9,6 +9,8 @@ import io.netty.handler.codec.http.*;
 import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
 
+import java.net.URI;
+
 /**
  * http netty server的案例演示
  *
@@ -30,13 +32,18 @@ public class HttpNettyServerHandler01 extends SimpleChannelInboundHandler<HttpOb
         if (msg instanceof HttpRequest) {
             log.info("msgl类型:{}", msg.getClass());
             log.info("客户端的地址：{}", ctx.channel().remoteAddress());
+            URI uri = new URI(((HttpRequest) msg).uri());
+            if ("/favicon.ico".equals(uri.getPath())) {
+                log.info("当前请求的是/favicon.ico");
+                return;
+            }
             //回复客户端信息:
             ByteBuf byteBuf = Unpooled.copiedBuffer("hello,我是服务器", CharsetUtil.UTF_8);
             //构造一个http响应
             FullHttpResponse response
                     = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK, byteBuf);
             response.headers().set(HttpHeaderNames.CONTENT_TYPE, "text/plain;charset=utf-8");
-            response.headers().set(HttpHeaderNames.CONTENT_LENGTH,byteBuf.readableBytes());
+            response.headers().set(HttpHeaderNames.CONTENT_LENGTH, byteBuf.readableBytes());
             ctx.writeAndFlush(response);
 
         }
