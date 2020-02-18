@@ -8,6 +8,7 @@
         <module>bio_demo_01</module>
         <module>nio_demo_01</module>
         <module>netty_demo_01</module>
+        <module>netty_http_demo_01</module>
     </modules>
     <groupId>com.ky2009666.apps.netty</groupId>
     <artifactId>netty_demo_all</artifactId>
